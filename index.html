@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 4: Sign Up Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <h1> Sign Up Form </h1>
+        
+        <form id="form" method="post" action="welcome.html">
+            <!--<legend>Sign Up</legend>-->
+            First Name: <input type="text"><br> 
+            Last Name: <input type="text"><br> 
+            Email: <input type="text"><br> 
+            Phone Number:<input type="text"><br><br>
+            Zip Code: <input type="text" name="zip" id="zip"><br>
+            City: <span id="city"></span>
+            <br>
+            Latitude: 
+            <br>
+            Longitude:
+            <br><br>
+            State: 
+            <select id="state" name="state">
+                <!--<option value="">Select One</option>-->
+                <!--<option value="ca">California</option>-->
+                <!--<option value="ny">New York</option>-->
+                <!--<option value="tx">Texas</option>-->
+            </select>
+            <br>
+            Select a County: <select id="county"></select>
+            
+            <br>
+            
+            Desired Username: <input id="username" name="username" type="text">
+            <span id="username_error"></span>
+            <br>
+            Password: <input id="password" name="password" type="password">
+            <br>
+            Type Password Again: <input id="passwordAgain" type="password">
+            <span id="passwordAgainError"></span>
+            <br>
+            <input type="submit" value="Sign up!">
+        </form>
+    
+    <script type="text/javascript" src="assets/scripts.js"></script>
+    </body>
+</html>

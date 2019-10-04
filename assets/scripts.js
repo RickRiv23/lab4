@@ -2,7 +2,7 @@
 const zipCodeURL = 'https://cst336.herokuapp.com/projects/api/cityInfoAPI.php',
     countyURL = 'https://cst336.herokuapp.com/projects/api/countyListAPI.php',
     stateURL = 'https://cst336.herokuapp.com/projects/api/state_abbrAPI.php',
-    usernameURL = 'https://cst336.herokuapp.com/projects/api/usernamesAPI.php?username=eeny';
+    usernameURL = 'https://cst336.herokuapp.com/projects/api/usernamesAPI.php';
 
 var usernameAvailable = false;
 
@@ -61,14 +61,21 @@ function isFormValid(){
     if(!usernameAvailable || ($("#username").val().length == 0) )
         isValid = false;
         
-    if($("#username").val().length == 0)
+    if($("#username").val().length == 0){
         $("#username_error").html("Username is required");
         $("#username_error").css('color', 'black');
         isValid = false;
+    }
         
-    if( (checkPassword != $("#passwordAgain").val()) && (checkPassword.length < 6) )
+    if( (checkPassword != $("#passwordAgain").val()) ){
         $("#passwordAgainError").html("Passwords mismatch!");
         isValid = false;
+    }
+    
+    if( (checkPassword.length < 6) ){
+        $("#passwordAgainError").html("Password must be longer than 6 characters");
+        isValid = false;
+    }
     
     return isValid;
 }
@@ -85,6 +92,7 @@ function getStates(){
             data.forEach(function(i){
                 $(stateList).append(`<option value="${i.usps}">${i.state}</option>`)
             });
+            getCounty($(stateList).val());
         }
     });
 }
@@ -102,8 +110,8 @@ $("#state").on('change', function(){
 });
 
 $("#username").on('change', function(){
-   let username = this.value;
-   getCounty(state);
+   let username = $("#username").val();
+   checkUsername(name);
 });
 
 $("#form").on('submit', function(e){

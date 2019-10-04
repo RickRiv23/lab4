@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+#form{
+    text-align: left;
+    width: 90%;
+    margin: 0px auto;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+.half{
+    width: 50%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+label{
+    width: 100%;
+}
+
+input[type="submit"]{
+    float: left;
+    clear: both;
+    margin: 0px auto;
+}

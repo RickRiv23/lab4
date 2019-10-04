@@ -4,7 +4,8 @@
         <title>Lab 4: Sign Up Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="" type="text/css" />
+        <link rel="stylesheet" href="assets/styles.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -13,36 +14,48 @@
         
         <form id="form" method="post" action="welcome.html">
             <!--<legend>Sign Up</legend>-->
-            First Name: <input type="text"><br> 
-            Last Name: <input type="text"><br> 
-            Email: <input type="text"><br> 
-            Phone Number:<input type="text"><br><br>
-            Zip Code: <input type="text" name="zip" id="zip"><br>
-            City: <span id="city"></span>
+            <div class="half">
+                <label for="">First Name: <input type="text" required></label>
+                <br> 
+                <label>Last Name: <input type="text" required></label>
+            </div>
+            <br> 
+            <div class="half">
+                <label>Email: <input type="text" required></label>
+                <br> 
+                <label>Phone Number: <input type="text" required></label>
+            </div>
             <br>
-            Latitude: 
+            <div class="half">
+                <label>Zip Code: <input type="text" name="zip" id="zip" required></label>
+                <br>
+                City: <span id="city"></span>
+                <br>
+                Latitude: 
+                <br>
+                Longitude:
+                <br><br>
+                State: 
+                <select id="state" name="state">
+                    <!--<option value="">Select One</option>-->
+                    <!--<option value="ca">California</option>-->
+                    <!--<option value="ny">New York</option>-->
+                    <!--<option value="tx">Texas</option>-->
+                </select>
+                <br>
+                Select a County: <select id="county"></select>
+            </div>
             <br>
-            Longitude:
-            <br><br>
-            State: 
-            <select id="state" name="state">
-                <!--<option value="">Select One</option>-->
-                <!--<option value="ca">California</option>-->
-                <!--<option value="ny">New York</option>-->
-                <!--<option value="tx">Texas</option>-->
-            </select>
-            <br>
-            Select a County: <select id="county"></select>
             
-            <br>
-            
-            Desired Username: <input id="username" name="username" type="text">
-            <span id="username_error"></span>
-            <br>
-            Password: <input id="password" name="password" type="password">
-            <br>
-            Type Password Again: <input id="passwordAgain" type="password">
-            <span id="passwordAgainError"></span>
+            <div class="half">
+                <label>Username: <input id="username" name="username" type="text" required></label>
+                <span id="username_error"></span>
+                <br>
+                <label>Password: <input id="password" name="password" type="password" required></label>
+                <br>
+                <label>Type Password Again: <input id="passwordAgain" type="password"></label>
+                <span id="passwordAgainError"></span>
+            </div>
             <br>
             <input type="submit" value="Sign up!">
         </form>
